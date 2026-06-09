@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR-Codes — Nakhla, Yusha Detailing, Klar &amp; Grün</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{--paper:#f4f1ea;--ink:#1b1813;--ink-soft:#5d564b;--line:#ddd6c7;--clay:#a9663f;--display:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;--body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;padding:48px 22px 80px}
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(2rem,5vw,3rem);text-align:center}
+  .intro{text-align:center;color:var(--ink-soft);max-width:60ch;margin:14px auto 8px;font-size:1.05rem}
+  .hint{text-align:center;color:var(--clay);font-size:.92rem;margin-bottom:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;text-align:center;box-shadow:0 18px 44px -34px rgba(27,24,19,.5)}
+  .card h2{font-family:var(--display);font-weight:600;font-size:1.3rem}
+  .card .url{font-size:.82rem;color:var(--ink-soft);word-break:break-all;margin:6px 0 18px}
+  .qr-holder{width:200px;height:200px;margin:0 auto;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+  .qr-holder img,.qr-holder canvas{width:184px!important;height:184px!important}
+  .edit{margin-top:16px}
+  .edit input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:var(--body);font-size:16px}
+  .btns{display:flex;gap:8px;margin-top:12px}
+  .btn{flex:1;padding:11px;border-radius:9px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;font-family:var(--body);transition:.2s}
+  .btn-dl{background:var(--ink);color:var(--paper)}
+  .btn-dl:hover{background:var(--clay)}
+  .btn-up{background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+  .btn-up:hover{border-color:var(--ink)}
+  .wallet{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 30px}
+  .wallet h3{font-family:var(--display);font-weight:600;font-size:1.4rem;margin-bottom:14px}
+  .wallet ol{margin:0 0 0 20px;color:var(--ink-soft)}
+  .wallet li{margin:9px 0}
+  .wallet b{color:var(--ink)}
+  .tagline{font-size:.84rem;color:var(--ink-soft);margin-top:10px}
+  img,svg{max-width:100%;height:auto}
+  @media(max-width:560px){h1{word-break:break-word}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Deine QR-Codes</h1>
+  <p class="intro">Jeder Code führt zur jeweiligen Website. Passt die URL noch nicht? Einfach im Feld ändern und „Neu erzeugen" drücken – danach herunterladen.</p>
+  <p class="hint">Tipp: Lade die Seiten erst zu GitHub hoch, prüfe die echte Adresse und erzeuge dann die Codes. So zeigt der QR garantiert auf die richtige Seite.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Nakhla</h2>
+      <div class="url" id="url0-label"></div>
+      <div class="qr-holder" id="qr0"></div>
+      <div class="edit"><input id="url0" value="https://nakhla-services.de"></div>
+      <div class="btns">
+        <button class="btn btn-up" onclick="regen(0)">Neu erzeugen</button>
+        <button class="btn btn-dl" onclick="download(0,'qr-nakhla.png')">Download</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Yusha Detailing</h2>
+      <div class="url" id="url1-label"></div>
+      <div class="qr-holder" id="qr1"></div>
+      <div class="edit"><input id="url1" value="https://nakhla-services.de/detailing/"></div>
+      <div class="btns">
+        <button class="btn btn-up" onclick="regen(1)">Neu erzeugen</button>
+        <button class="btn btn-dl" onclick="download(1,'qr-detailing.png')">Download</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Klar &amp; Grün</h2>
+      <div class="url" id="url2-label"></div>
+      <div class="qr-holder" id="qr2"></div>
+      <div class="edit"><input id="url2" value="https://nakhla-services.de/service/"></div>
+      <div class="btns">
+        <button class="btn btn-up" onclick="regen(2)">Neu erzeugen</button>
+        <button class="btn btn-dl" onclick="download(2,'qr-klar-gruen.png')">Download</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Kundenkarten-Demo</h2>
+      <div class="url" id="url3-label"></div>
+      <div class="qr-holder" id="qr3"></div>
+      <div class="edit"><input id="url3" value="https://nakhla-services.de/kundenkarte/"></div>
+      <div class="btns">
+        <button class="btn btn-up" onclick="regen(3)">Neu erzeugen</button>
+        <button class="btn btn-dl" onclick="download(3,'qr-kundenkarte.png')">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wallet">
+    <h3>So kommt der QR-Code in deine Wallet (iPhone)</h3>
+    <p style="color:var(--ink-soft);margin-bottom:14px">Apple Wallet nimmt keine reinen Bilder an – ein QR muss als „Pass" hinterlegt werden. Am einfachsten mit einer kostenlosen App:</p>
+    <ol>
+      <li>QR-Code oben <b>herunterladen</b> (PNG landet in deinen Dateien/Fotos).</li>
+      <li>App <b>„Pass2U Wallet"</b> aus dem App Store laden (kostenlos).</li>
+      <li>Dort <b>„Pass erstellen" → „QR-Code"</b> wählen, das PNG einfügen oder die URL eintippen.</li>
+      <li>Pass speichern und <b>„Zu Apple Wallet hinzufügen"</b> antippen. Fertig – jetzt liegt dein QR in der Wallet und du kannst ihn jedem zeigen.</li>
+    </ol>
+    <p class="tagline">Android/Google Wallet: gleicher Weg über „Wallet Passes" oder „Pass2U". Zum Ausdrucken (Flyer, Aufkleber fürs Auto, Schaufenster) reicht das PNG direkt.</p>
+  </div>
+</div>
+
+<script>
+  const HIRES = 1024; // hohe Auflösung für Druck & Wallet
+  function make(i){
+    const holder = document.getElementById("qr"+i);
+    const url = document.getElementById("url"+i).value.trim();
+    document.getElementById("url"+i+"-label").textContent = url;
+    holder.innerHTML = "";
+    try{
+      new QRCode(holder,{text:url,width:HIRES,height:HIRES,colorDark:"#1b1813",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+    }catch(e){ holder.textContent = "QR-Bibliothek nicht geladen – bitte online öffnen."; }
+  }
+  function regen(i){ make(i); }
+  function download(i,name){
+    const holder = document.getElementById("qr"+i);
+    const img = holder.querySelector("img");
+    const canvas = holder.querySelector("canvas");
+    let dataUrl = img ? img.src : (canvas ? canvas.toDataURL("image/png") : null);
+    if(!dataUrl){ alert("Bitte zuerst online öffnen, damit der Code erzeugt wird."); return; }
+    const a = document.createElement("a"); a.href = dataUrl; a.download = name; a.click();
+  }
+  function init(){ [0,1,2,3].forEach(make); }
+  if(window.QRCode) init(); else window.addEventListener("load",init);
+</script>
+</body>
+</html>

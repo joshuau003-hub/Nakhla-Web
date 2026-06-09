@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klar &amp; Grün Hamburg — Fenster &amp; Garten in guten Händen</title>
+<meta name="description" content="Fensterreinigung und Gartenpflege in Hamburg, von einer Person, der man vertrauen kann. Für Privathaushalte, Geschäfte und ältere Menschen. Feste Termine, klare Preise.">
+<meta property="og:title" content="Klar & Grün Hamburg — Fenster & Garten">
+<meta property="og:description" content="Saubere Fenster, gepflegte Gärten – zuverlässig und ohne Aufwand für Sie.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>🌿</text></svg>">
+
+<style>
+  :root{
+    --ink:#23302b;
+    --ink-soft:#56655d;
+    --paper:#f7f5ef;
+    --paper-2:#eeece2;
+    --blue:#2f6f8f;        /* Fenster */
+    --blue-soft:#e6eef2;
+    --green:#3d7a4a;       /* Garten */
+    --green-soft:#e7f0e6;
+    --gold:#a8853c;
+    --line:#e0ddd0;
+    --display:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia, Georgia, serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial, system-ui, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,245,239,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{font-family:var(--display);font-size:1.5rem;font-weight:600;display:flex;align-items:center;gap:10px}
+  .brand .mk{display:inline-flex;gap:3px}
+  .brand .mk i{width:10px;height:22px;border-radius:3px;display:block}
+  .brand .mk i:first-child{background:var(--blue)}
+  .brand .mk i:last-child{background:var(--green)}
+  .nav-links{display:flex;gap:28px;font-weight:600;font-size:.95rem}
+  .nav-links a{color:var(--ink-soft);transition:.2s}.nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--ink);color:#fff;padding:12px 22px;border-radius:8px;font-weight:600;font-size:.92rem}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero-top{text-align:center;padding:72px 0 40px}
+  .hero-top .ey{color:var(--gold);font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:.82rem}
+  .hero-top h1{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,5.2vw,3.9rem);line-height:1.1;margin:18px auto 0;max-width:20ch}
+  .hero-top p{margin:20px auto 0;max-width:58ch;color:var(--ink-soft);font-size:1.16rem}
+  .trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .trust span{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.96rem}
+  .trust svg{color:var(--green)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:16px;box-shadow:0 26px 60px -42px rgba(35,48,43,.5)}
+  @media(max-width:780px){.split{grid-template-columns:1fr}}
+  .col{padding:52px 46px;position:relative}
+  @media(max-width:520px){.col{padding:38px 26px}}
+  .col.fenster{background:var(--blue-soft)}
+  .col.garten{background:var(--green-soft)}
+  .col .tag{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:.8rem;padding:8px 14px;border-radius:30px;background:#fff}
+  .col.fenster .tag{color:var(--blue)}.col.garten .tag{color:var(--green)}
+  .col h2{font-family:var(--display);font-weight:500;font-size:2rem;margin:20px 0 10px;line-height:1.14}
+  .col>p{color:var(--ink-soft);font-size:1.05rem}
+  .col ul{list-style:none;margin-top:22px}
+  .col li{display:flex;gap:12px;padding:11px 0;border-top:1px solid rgba(35,48,43,.1);font-size:1.03rem}
+  .col li svg{flex-shrink:0;margin-top:4px}
+  .col.fenster li svg{color:var(--blue)}.col.garten li svg{color:var(--green)}
+  .col .colcta{margin-top:28px;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:14px 26px;border-radius:10px;color:#fff;font-size:1rem;transition:.25s}
+  .col.fenster .colcta{background:var(--blue)}.col.garten .colcta{background:var(--green)}
+  .col .colcta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .col .icon-big{position:absolute;top:40px;right:40px;opacity:.14}
+  @media(max-width:520px){.col .icon-big{display:none}}
+
+  section{padding:78px 0}
+  .sec-head{text-align:center;max-width:58ch;margin:0 auto 48px}
+  .sec-head .k{color:var(--gold);font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:.8rem}
+  .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,4vw,2.7rem);margin-top:12px;line-height:1.12}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.06rem}
+
+  /* persönliche Note */
+  .me{background:#fff;border:1px solid var(--line);border-radius:20px;padding:46px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;max-width:920px;margin:0 auto}
+  @media(max-width:640px){.me{grid-template-columns:1fr;padding:34px 26px;text-align:center}}
+  .me .photo{width:128px;height:128px;border-radius:50%;background:linear-gradient(150deg,var(--blue-soft),var(--green-soft));display:grid;place-items:center;color:var(--green);font-family:var(--display);font-size:2.6rem;font-weight:600;margin:0 auto}
+  .me .q{font-family:var(--display);font-style:italic;font-size:1.3rem;line-height:1.45;color:var(--ink)}
+  .me .sig{margin-top:16px;font-weight:600;color:var(--ink-soft)}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.cards3{grid-template-columns:1fr}}
+  .c3{background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 30px;transition:.25s}
+  .c3:hover{transform:translateY(-4px);box-shadow:0 18px 40px -30px rgba(35,48,43,.5)}
+  .c3 .ic{width:52px;height:52px;border-radius:14px;background:var(--paper-2);display:grid;place-items:center;color:var(--ink);margin-bottom:18px}
+  .c3 h3{font-family:var(--display);font-weight:600;font-size:1.35rem;margin-bottom:10px}
+  .c3 p{color:var(--ink-soft);font-size:1.01rem}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  @media(max-width:820px){.steps{grid-template-columns:1fr}}
+  .stp{background:var(--paper-2);border-radius:16px;padding:32px 28px;position:relative}
+  .stp::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:1.6rem;color:var(--gold);font-weight:600}
+  .stp h4{font-size:1.18rem;margin:8px 0}.stp p{color:var(--ink-soft);font-size:1.01rem}
+
+  .kontakt{background:var(--ink);color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:center}
+  @media(max-width:820px){.kontakt{grid-template-columns:1fr;padding:40px 28px}}
+  .kontakt .k{color:#cdb574;font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:.8rem}
+  .kontakt h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,4vw,2.6rem);margin-top:12px;line-height:1.14}
+  .kontakt .sub{color:#b7c1bb;margin-top:14px;font-size:1.06rem}
+  .clist{margin-top:26px;display:flex;flex-direction:column}
+  .crow{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.06rem;font-weight:600}
+  .crow:last-child{border:none}
+  .crow .b{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0}
+  .crow.fen .b{color:#86c0d8}.crow.gar .b{color:#8ccb97}.crow.mail .b{color:#cdb574}
+  .crow a:hover{text-decoration:underline}
+  .qr-panel{background:#fff;color:var(--ink);border-radius:18px;padding:30px;text-align:center}
+  .qr-panel #qr{display:inline-block;background:#fff;padding:8px;border-radius:10px}
+  .qr-panel .t{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-top:14px}
+  .qr-panel .s{color:var(--ink-soft);font-size:.9rem;margin-top:3px}
+
+  footer{padding:46px 0;text-align:center;color:var(--ink-soft);font-size:.92rem;border-top:1px solid var(--line);margin-top:20px}
+  .socials{display:flex;gap:16px;justify-content:center;margin-bottom:16px}
+  .socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-soft);transition:.25s}
+  .socials a:hover{border-color:var(--green);color:var(--green)}
+  img,svg{max-width:100%;height:auto}
+  @media(max-width:560px){h1{word-break:break-word}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="mk"><i></i><i></i></span> Klar &amp; Grün</div>
+    <div class="nav-links">
+      <a href="#fenster">Fenster</a>
+      <a href="#garten">Garten</a>
+      <a href="#person">Wer kommt</a>
+      <a href="#ablauf">Ablauf</a>
+    </div>
+    <a href="#kontakt" class="nav-cta">Angebot anfragen</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hero-top">
+    <div class="ey">Hamburg &amp; Umgebung</div>
+    <h1>Saubere Fenster und ein gepflegter Garten — ohne dass Sie sich kümmern müssen.</h1>
+    <p>Zwei Dinge, die liegen bleiben, wenn die Zeit fehlt oder die Leiter zu hoch wird. Genau dafür bin ich da – zuverlässig, sorgfältig und zu einem Preis, den wir vorher festhalten.</p>
+    <div class="trust">
+      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Versichert &amp; angemeldet</span>
+      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Termine, die halten</span>
+      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Preis vorher klar</span>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="col fenster reveal" id="fenster">
+      <svg class="icon-big" width="116" height="116" viewBox="0 0 24 24" fill="none" stroke="#2f6f8f" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg>
+      <span class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg> Fensterreinigung</span>
+      <h2>Wieder klare Sicht — innen wie außen.</h2>
+      <p>Ich reinige Glas gründlich und lasse alles trocken und ordentlich zurück. Keine Schlieren, keine nassen Fensterbänke.</p>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Fenster, Rahmen und Fensterbänke</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Schaufenster und Glastüren für Geschäfte</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Wintergärten und höher gelegene Scheiben</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Auf Wunsch regelmäßig – Sie müssen an nichts denken</li>
+      </ul>
+      <a class="colcta wa" data-msg="Guten Tag, ich interessiere mich für eine Fensterreinigung." target="_blank" rel="noopener">Fenster anfragen →</a>
+    </div>
+    <div class="col garten reveal" id="garten">
+      <svg class="icon-big" width="116" height="116" viewBox="0 0 24 24" fill="none" stroke="#3d7a4a" stroke-width="1"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 3-2 5-5 5zm0 3c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg>
+      <span class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 3-2 5-5 5zm0 3c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg> Gartenpflege</span>
+      <h2>Ein Garten, an dem Sie Freude haben — nicht Arbeit.</h2>
+      <p>Ob einmalig zum Saisonstart oder regelmäßig über das Jahr: Ich halte Ihren Außenbereich in Form, damit Sie ihn einfach nur genießen können.</p>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Rasen mähen, kanten und im Frühjahr vertikutieren</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Hecken und Sträucher in Form schneiden</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Beete pflegen, Unkraut jäten, im Herbst das Laub</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Den Grünschnitt nehme ich gleich mit</li>
+      </ul>
+      <a class="colcta wa" data-msg="Guten Tag, ich interessiere mich für Gartenpflege." target="_blank" rel="noopener">Garten anfragen →</a>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="person">
+  <div class="me reveal">
+    <div class="photo">Y</div>
+    <div>
+      <p class="q">„Bei mir kommt keine wechselnde Kolonne, sondern dieselbe Person, die Sie kennen. Ich nehme mir Zeit, gehe sorgsam mit Ihrem Zuhause um und sage Ihnen ehrlich, was nötig ist und was nicht."</p>
+      <p class="sig">— Yusha, Klar &amp; Grün · Hamburg</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="zielgruppen">
+  <div class="sec-head reveal">
+    <div class="k">Für wen ich arbeite</div>
+    <h2>Eine Nachricht genügt — eine Sorge weniger.</h2>
+  </div>
+  <div class="cards3">
+    <div class="c3 reveal">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg></div>
+      <h3>Hausbesitzer</h3>
+      <p>Sie haben Besseres zu tun, als selbst auf die Leiter zu steigen. Fenster und Garten übernehme ich – auch, wenn Sie gerade nicht da sind.</p>
+    </div>
+    <div class="c3 reveal">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h.01M15 8h.01M9 12h.01M15 12h.01M9 16h6"/></svg></div>
+      <h3>Geschäfte &amp; Büros</h3>
+      <p>Ein sauberes Schaufenster ist das Erste, was Ihre Kundschaft sieht. Auf Wunsch komme ich in festen Abständen – mit ordentlicher Rechnung.</p>
+    </div>
+    <div class="c3 reveal">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+      <h3>Ältere Menschen</h3>
+      <p>Sie sollen nichts Schweres heben und sich auf nichts Wackeliges stellen. Ich bin freundlich, geduldig und zuverlässig – und Sie erreichen mich direkt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="ablauf" style="background:var(--paper-2);border-radius:24px">
+  <div class="sec-head reveal">
+    <div class="k">So einfach ist es</div>
+    <h2>In drei Schritten erledigt.</h2>
+  </div>
+  <div class="steps">
+    <div class="stp reveal"><h4>Sie melden sich</h4><p>Kurz per WhatsApp, Telefon oder E-Mail. Sagen Sie mir, worum es geht – ein Foto hilft, ist aber kein Muss.</p></div>
+    <div class="stp reveal"><h4>Wir machen einen Preis</h4><p>Sie bekommen einen festen Preis und einen Termin, der zu Ihnen passt. Ohne versteckte Kosten.</p></div>
+    <div class="stp reveal"><h4>Ich komme &amp; mache</h4><p>Pünktlich, gründlich, und am Ende ist alles sauber. Sind Sie nicht zufrieden, sagen Sie es – dann bessere ich nach.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="kontakt">
+  <div class="kontakt reveal">
+    <div>
+      <div class="k">Kontakt aufnehmen</div>
+      <h2>Fordern Sie Ihr unverbindliches Angebot an.</h2>
+      <p class="sub">Schreiben Sie mir kurz, was Sie brauchen. Ich melde mich zeitnah mit einem festen Preis zurück.</p>
+      <div class="clist">
+        <div class="crow fen">
+          <span class="b"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3zm5.5-6c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5-.1-.2-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.7-1 2.8 0 1.7 1.2 3.3 1.4 3.5.2.2 2.5 3.8 6 5.3 2.2.9 3 1 4.1.8.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></span>
+          <a id="wa-link" target="_blank" rel="noopener">+49 1718198454 · WhatsApp</a>
+        </div>
+        <div class="crow mail">
+          <span class="b"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <a href="mailto:info@nakhla-services.de">info@nakhla-services.de</a>
+        </div>
+        <div class="crow gar">
+          <span class="b"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span>Hamburg &amp; Umland</span>
+        </div>
+      </div>
+    </div>
+    <div class="qr-panel">
+      <div class="t">Persönlich &amp; verlässlich</div>
+      <div class="s" style="margin-top:10px;line-height:1.5">Sie erreichen immer dieselbe Person. Ich melde mich in der Regel am selben Werktag mit einem festen Preis zurück.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="socials" id="socials">
+    <a data-on="0" data-href="https://instagram.com/DEIN_HANDLE" aria-label="Instagram"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    <a data-on="0" data-href="https://facebook.com/DEINE_SEITE" aria-label="Facebook"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9z"/></svg></a>
+  </div>
+  © <span id="yr"></span> Klar &amp; Grün Hamburg · Fensterreinigung &amp; Gartenpflege
+  <div style="margin-top:12px"><a href="../impressum/index.html" style="color:inherit;border-bottom:1px solid var(--line)">Impressum</a> &nbsp;·&nbsp; <a href="../datenschutz/index.html" style="color:inherit;border-bottom:1px solid var(--line)">Datenschutz</a></div>
+</footer>
+
+<script>
+/* =================================================================
+   KONFIGURATION  –  hier alles Wichtige an einer Stelle ändern
+   ================================================================= */
+const CONFIG = {
+  whatsapp: "491718198454",
+  email: "info@nakhla-services.de",
+  siteUrl: "https://nakhla-services.de/service/"   // <- Ziel des QR-Codes
+};
+/* ================================================================= */
+
+const WA_BASE = "https://wa.me/" + CONFIG.whatsapp + "?text=";
+document.getElementById("wa-link").href = WA_BASE + encodeURIComponent("Guten Tag, ich interessiere mich für Ihre Leistungen (Fenster/Garten).");
+document.querySelectorAll(".wa").forEach(a=>{a.href = WA_BASE + encodeURIComponent(a.dataset.msg);});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+document.querySelectorAll("#socials a").forEach(a=>{
+  if(a.dataset.on==="1"){ a.href=a.dataset.href; a.target="_blank"; a.rel="noopener"; }
+  else { a.style.display="none"; }
+});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.14});
+document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=(i%3*80)+"ms";io.observe(el);});
+</script>
+</body>
+</html>
